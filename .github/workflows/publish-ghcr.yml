@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: Tag to attach to the published container image
+        description: Container image tag
         required: true
         default: latest
         type: string
@@ -12,6 +12,8 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     steps:
       - name: Login to GHCR
         uses: docker/login-action@v3
