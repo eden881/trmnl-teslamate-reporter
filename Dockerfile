@@ -1,3 +1,5 @@
+LABEL org.opencontainers.image.source https://github.com/eden881/trmnl-teslamate-reporter
+
 FROM python:3.13-slim
 WORKDIR /app
 COPY requirements.txt .
