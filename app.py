@@ -31,7 +31,9 @@ def fetch_data_mqtt():
         f"teslamate/cars/{CAR_ID}/rated_battery_range_km",
         f"teslamate/cars/{CAR_ID}/version",
         f"teslamate/cars/{CAR_ID}/odometer",
-        f"teslamate/cars/{CAR_ID}/display_name"
+        f"teslamate/cars/{CAR_ID}/display_name",
+        f"teslamate/cars/{CAR_ID}/charger_power",
+        f"teslamate/cars/{CAR_ID}/charger_voltage"
     ]
 
     try:
