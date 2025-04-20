@@ -13,12 +13,13 @@ logging.basicConfig(
 logger = logging.getLogger("trmnl-teslamate-reporter")
 
 # Get configuration from environment variables
+FETCH_FREQUENCY = int(os.environ.get("FETCH_FREQUENCY", "15"))
 MQTT_BROKER = os.environ.get("MQTT_BROKER", "mosquitto")
-MQTT_PORT = int(os.environ.get("MQTT_PORT", 1883))
+MQTT_PORT = int(os.environ.get("MQTT_PORT", "1883"))
 MQTT_USER = os.environ.get("MQTT_USERNAME")
 MQTT_PASSWORD = os.environ.get("MQTT_PASSWORD")
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
-CAR_ID = os.environ.get("CAR_ID", "1")
+CAR_ID = int(os.environ.get("CAR_ID", "1"))
 
 def fetch_data_mqtt():
     """Fetch data from MQTT"""
@@ -91,7 +92,7 @@ def report_data():
 def start_scheduler():
     """Set up and start the scheduler"""
     logger.info("Starting scheduler")
-    schedule.every(15).minutes.do(report_data)
+    schedule.every(FETCH_FREQUENCY).minutes.do(report_data)
 
     # Run once immediately on startup
     report_data()
