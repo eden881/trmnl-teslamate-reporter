@@ -12,3 +12,4 @@ To run this application, you need to set the following environment variables:
 - `MQTT_PASSWORD`: The password for MQTT authentication (if required)
 - `WEBHOOK_URL`: The URL of the webhook to post data to
 - `CAR_ID`: The ID of the car (default: `1`)
+- `FETCH_FREQUENCY`: The frequency (in minutes) to fetch data (default: `15`)
