@@ -12,6 +12,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger("trmnl-teslamate-reporter")
 
+# Load dev environment variables is available
+try:
+    from dotenv import load_dotenv
+    load_dotenv()  # Development mode
+except ImportError:
+    pass           # Production mode
+
 # Get configuration from environment variables
 FETCH_FREQUENCY = int(os.environ.get("FETCH_FREQUENCY", "15"))
 MQTT_BROKER = os.environ.get("MQTT_BROKER", "mosquitto")
