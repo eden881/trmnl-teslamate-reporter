@@ -12,7 +12,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("trmnl-teslamate-reporter")
 
-# Load dev environment variables is available
+# Load dev environment variables if available
 try:
     from dotenv import load_dotenv
     load_dotenv()  # Development mode
