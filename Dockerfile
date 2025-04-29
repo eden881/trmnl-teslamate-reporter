@@ -3,5 +3,5 @@ LABEL org.opencontainers.image.source=https://github.com/eden881/trmnl-teslamate
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 WORKDIR /app
 COPY main.py pyproject.toml uv.lock .
-RUN uv sync --locked
+RUN uv sync --no-dev --locked
 CMD ["uv",  "run",  "main.py"]
