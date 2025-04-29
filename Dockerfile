@@ -4,4 +4,4 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 WORKDIR /app
 COPY main.py pyproject.toml uv.lock .
 RUN uv sync --no-dev --locked
-CMD ["uv",  "run",  "main.py"]
+CMD ["uv",  "run", "--no-dev", "main.py"]
