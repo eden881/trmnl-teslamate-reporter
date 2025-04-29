@@ -1,10 +1,12 @@
 # trmnl-teslamate-reporter
 
-Use this to push data from a local Teslamate deployment to the TRMNL plugin via a webhook.
+Use this to push data from a local Teslamate deployment to the TRMNL plugin via
+a webhook.
 
 ## Usage
 
-This app can be easily included in an existing Teslamate deployment by using the `docker-compose.yml` file:
+This app can be easily included in an existing Teslamate deployment by using the
+`docker-compose.yml` file:
 
 ```yaml
 trmnl-reporter:
@@ -21,9 +23,11 @@ trmnl-reporter:
       condition: service_started
 ```
 
-This configuration assumes you have the MQTT feature in Teslamate enabled, named the broker's service `mosquitto`, and named the main app `teslamate`.
+This configuration assumes you have the MQTT feature in Teslamate enabled, named
+the broker's service `mosquitto`, and named the main app `teslamate`.
 
-Replace the `WEBHOOK_URL` with your own URL from the plugin's page on the TRMNL dashboard.
+Replace the `WEBHOOK_URL` with your own URL from the plugin's page on the TRMNL
+dashboard.
 You can also pass more settings in - see below.
 
 ## Environment Variables
